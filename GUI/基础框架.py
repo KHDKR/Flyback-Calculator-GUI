@@ -1,8 +1,13 @@
-import sys
-from PySide6.QtWidgets import QApplication, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
-app = QApplication(sys.argv)
-#label = QLabel("Hello World!")
-label = QLabel("<font color=red size=40>Hello World!</font>")
-label.show()
-app.exec_()
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        btn = QPushButton('click',self)
+
+if __name__ == '__main__':
+    app = QApplication([])
+    window = MyWindow()
+    window.show()
+    app.exec()
+    
